@@ -1,0 +1,21 @@
+﻿  World.cpp
+  DebugWorld.cpp
+  Options.cpp
+  Logger.cpp
+c:\users\frenes1\documents\github\basen-engine\src\utility\logger.cpp(35): warning C4244: 'initializing': conversion from 'sf::Int32' to 'float', possible loss of data
+  ColisionNode.cpp
+  CircleNode.cpp
+  Colision.cpp
+c:\users\frenes1\documents\github\basen-engine\src\physics\colision.hpp(15): warning C4091: 'static ': ignored on left of 'bas::Colision' when no variable is declared
+  Input.cpp
+  TextNode.cpp
+  SpriteNode.cpp
+  DynamicNode.cpp
+  BaseNode.cpp
+  AnimationNode.cpp
+  Button.cpp
+  Basen.cpp
+  Starter.cpp
+  Generating Code...
+sfml-main-d.lib(MainWin32.cpp.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'sfml-main-d.lib(MainWin32.cpp.obj)' or at 'C:\Users\Frenes1\Documents\GitHub\Basen-engine\bin\Debug\vc140.pdb'; linking object as if no debug info
+  BasenWPhys.vcxproj -> C:\Users\Frenes1\Documents\GitHub\Basen-engine\bin\Debug\BasenWPhys.exe
