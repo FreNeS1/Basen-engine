@@ -1,0 +1,127 @@
+***************************************************************     *************************************************************** 
+WORLD TAKE 1:
+*************************************************************** CPP *************************************************************** 
+
+*#include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Time.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/Graphics/Texture.hpp>
+
+#include "ResourceHolder.hpp"
+#include "ResourceHolderNames.hpp"
+#include "Nodes/BaseNode.hpp"
+#include "Nodes/SpriteNode.hpp"
+#include "Nodes/AnimationNode.hpp"
+#include "Nodes/DynamicNode.hpp"
+
+#include <array>
+
+namespace bas {
+
+	class World : private sf::NonCopyable
+	{
+	public:
+		explicit							World(sf::RenderWindow& window);	// Default constructor
+		void								update(sf::Time dt);				// Update method
+		void								draw();								// Draw method
+
+
+	private:
+		void								loadTextures();						// At the start of the world, we load it's textures
+		void								buildScene();						// At the start of the world, we create and position all nodes
+
+
+	private:
+		enum Layer		// All layers from bottom to top
+		{
+			Background,
+			Game,
+			UI,
+			LayerCount	// Not an used layer, just counts them
+		};
+
+	private:
+		sf::RenderWindow&					m_Window;		// The window
+		sf::View							m_WorldView;	// The camera
+
+		BaseNode							m_Scene;		// Main world node
+		std::array<BaseNode*, LayerCount>	m_SceneLayers;	// Layers
+		TextureHolder						m_Textures;		// TextureManager
+	};
+
+}
+
+*************************************************************** HPP *************************************************************** 
+
+#include "World.hpp"
+
+namespace bas {
+
+	World::World(sf::RenderWindow& window)
+		: m_Window(window)						// passed
+		, m_WorldView(window.getDefaultView())	// passed
+		, m_Scene()
+		, m_SceneLayers()
+		, m_Textures()
+	{
+		loadTextures();
+		buildScene();
+	}
+
+	void World::loadTextures()
+	{
+		m_Textures.load(Textures::Debug1, "res/Textures/FinishLine.png");
+		m_Textures.load(Textures::Debug2, "res/Textures/coin.png");
+		m_Textures.load(Textures::Debug3, "res/Textures/Explosion.png");
+	}
+
+	void World::buildScene()
+	{
+		for (std::size_t i = 0; i < LayerCount; i++)
+		{
+			BaseNode::Ptr layer(new BaseNode());
+			m_SceneLayers[i] = layer.get();
+
+			m_Scene.attachChild(std::move(layer));
+		}
+			
+		sf::Font& font1 = m_Fonts.get(Fonts::Debug1);
+		std::unique_ptr<TextNode> example(new TextNode(font1, 20));
+		example->setText(test);
+		m_Scene.attachChild(std::move(example));
+
+		sf::Texture& exampleTexture = m_Textures.get(Textures::Debug1);		/* TODO - Create an actual spriteNode, with position and stuff */
+		std::unique_ptr<SpriteNode> example(new SpriteNode(exampleTexture));
+		m_SceneLayers[UI]->attachChild(std::move(example));
+
+		sf::Texture& animatedTexture = m_Textures.get(Textures::Debug2);
+		std::unique_ptr<AnimationNode> animation(new AnimationNode(animatedTexture, 100, 100, 10, 0.56f, true));
+		animation->setPosition(200.0f, 0.0f);
+		m_SceneLayers[UI]->attachChild(std::move(animation));
+
+		sf::Texture& dynamicTexture = m_Textures.get(Textures::Debug3);
+		std::unique_ptr<DynamicNode> dynamic(new DynamicNode(dynamicTexture));
+		dynamic->setPosition(50.0f, 200.0f);
+		dynamic->createAnimation("1", 0, 256 * 0, 256, 256, 5, 1.0f, true);
+		dynamic->createAnimation("2", 0, 256 * 1, 256, 256, 5, 0.7f, true);
+		dynamic->createAnimation("3", 0, 256 * 2, 256, 256, 5, 0.4f, true);
+		dynamic->createAnimation("4", 0, 256 * 3, 256, 256, 4, 0.25f, true);
+		dynamic->setAnimation("2");
+		m_SceneLayers[UI]->attachChild(std::move(dynamic));
+	}
+
+	void World::draw()
+	{
+		m_Window.setView(m_WorldView);
+		m_Window.draw(m_Scene);
+	}
+
+	void World::update(sf::Time dt)
+	{
+		m_Scene.update(dt);
+	}
+
+}
+
+***************************************************************     *************************************************************** 

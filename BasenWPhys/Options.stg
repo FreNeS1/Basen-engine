@@ -1,0 +1,5 @@
+Options file. Modify values at your onw risk.
+
+Width = 1024;
+Height = 720;
+Fullscreen = 0;

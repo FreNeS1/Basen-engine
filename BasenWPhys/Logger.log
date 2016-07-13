@@ -1,0 +1,9 @@
+Log file, program version Logger.log
+
+[ 0 ms ] (INFO): Log file created
+[ 2 ms ] (WARNING): Options file loaded
+[ 478 ms ] (INFO): Window created
+
+Program finished on 5904 ms with:
+- 1 warnings
+- 0 errors

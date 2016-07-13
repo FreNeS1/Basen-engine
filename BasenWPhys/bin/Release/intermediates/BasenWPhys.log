@@ -1,0 +1,37 @@
+﻿Build started 27/04/2016 20:17:21.
+     1>Project "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\BasenWPhys.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\Cdev\SFML\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _MBCS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\\" /Fd"C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt src\Utility\Options.cpp
+         Options.cpp
+     1>src\Utility\Options.cpp(119): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\BasenWPhys.exe" /NOLOGO /LIBPATH:C:\Cdev\SFML\lib "sfml-main.lib" "sfml-system.lib" "sfml-audio.lib" "sfml-graphics.lib" "sfml-window.lib" "sfml-network.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\BasenWPhys.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\BasenWPhys.lib" /MACHINE:X86 /SAFESEH "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Basen.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Button.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Input.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\AnimationNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\BaseNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\DynamicNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\SpriteNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\TextNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Colision.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\AABB.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\CircleNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\ColisionNode.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Options.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\DebugWorld.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\FileIO.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Logger.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\MainMenuWorld.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\World.obj"
+         "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\intermediates\Starter.obj"
+         Generating code
+         1 of 655 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+           0 functions were new in current compilation
+           1 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+         BasenWPhys.vcxproj -> C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\bin\Release\BasenWPhys.exe
+     1>Done Building Project "C:\Users\Pepe\Documents\Visual Studio 2015\Projects\BasenWPhys\BasenWPhys\BasenWPhys.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.42
